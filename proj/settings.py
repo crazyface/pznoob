@@ -116,7 +116,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     'django.core.context_processors.request',
 )
 
-ROOT_URLCONF = 'urls'
+ROOT_URLCONF = 'pz.urls'
 
 
 TEMPLATE_DIRS = (
