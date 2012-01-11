@@ -137,6 +137,7 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
     'django.contrib.flatpages'
+    'south'
     # Uncomment the next line to enable the admin:
     # Uncomment the next line to enable admin documentation:
 )
