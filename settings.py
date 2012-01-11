@@ -1,4 +1,7 @@
 # Django settings for pz project.
+import os.path
+SITE_ROOT = os.path.dirname(os.path.realpath(__file__))
+
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -97,11 +100,28 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 )
 
-ROOT_URLCONF = 'pz.urls'
+TEMPLATE_CONTEXT_PROCESSORS = (
+    # default
+    "django.contrib.auth.context_processors.auth",
+    "django.core.context_processors.debug",
+    "django.core.context_processors.i18n",
+    "django.core.context_processors.media",
+    "django.core.context_processors.static",
+    "django.contrib.messages.context_processors.messages",
+
+    # required by django-admin-tools
+    'django.core.context_processors.request',
+)
+
+ROOT_URLCONF = 'urls'
+
 
 TEMPLATE_DIRS = (
+    os.path.join(SITE_ROOT, 'templates')
+#     root('templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.
@@ -114,10 +134,11 @@ INSTALLED_APPS = (
     'django.contrib.sites',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.admin',
+    'django.contrib.admindocs',
+    'django.contrib.flatpages'
     # Uncomment the next line to enable the admin:
-    # 'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    # 'django.contrib.admindocs',
 )
 
 # A sample logging configuration. The only tangible logging
