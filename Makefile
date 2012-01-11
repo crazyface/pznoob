@@ -1,2 +1,2 @@
 test:
-    echo '123'
+	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=settings django-admin.py test
