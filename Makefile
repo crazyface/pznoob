@@ -7,5 +7,5 @@ run:
 	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=proj.settings $(MANAGE) runserver
 
 syncdb:
-	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=proj.settings $(MANAGE) syncdb --noinput
-	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=proj.settings $(MANAGE) migrate
+	PYTHONPATH=`pwd`:../uwsgi/ DJANGO_SETTINGS_MODULE=uwsgi.settings_deploy $(MANAGE) syncdb --noinput
+	PYTHONPATH=`pwd`:../uwsgi/ DJANGO_SETTINGS_MODULE=uwsgi.settings_deploy $(MANAGE) migrate
