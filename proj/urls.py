@@ -22,8 +22,8 @@ urlpatterns += patterns('',
         }),
    )
 urlpatterns += patterns('',
-        url(r'^static/admin/(?P<path>.*)$', 'django.views.static.serve', {
-            'document_root': settings.STATIC_ROOT + 'admin/',
+        url(r'^static/(?P<path>.*)$', 'django.views.static.serve', {
+            'document_root': settings.STATIC_ROOT,
         }),
    )
 
