@@ -9,3 +9,6 @@ run:
 syncdb:
 	PYTHONPATH=`pwd`:../uwsgi/ DJANGO_SETTINGS_MODULE=uwsgi.settings_deploy $(MANAGE) syncdb --noinput
 	PYTHONPATH=`pwd`:../uwsgi/ DJANGO_SETTINGS_MODULE=uwsgi.settings_deploy $(MANAGE) migrate
+	PYTHONPATH=`pwd` DJANGO_SETTINGS_MODULE=proj.settings $(MANAGE) collectstatic --noinput
+	
+	

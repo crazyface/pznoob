@@ -56,11 +56,13 @@ USE_L10N = True
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = join_to_root('media/')
 
+STATIC_ROOT = join_to_root('static/')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
 MEDIA_URL = '/media/'
 
+STATIC_URL = '/static/'
 # Path for uploaded path
 UPLOAD_URL = 'uploads/'
 
@@ -102,7 +104,7 @@ SECRET_KEY = '6yudaln7u5a0m70m27@ld$q3kxb5yemhwds9f#2e1xjb7#&)@i'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    'django.template.loaders.eggs.Loader',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
@@ -110,7 +112,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
     "django.core.context_processors.debug",
     "django.core.context_processors.i18n",
     "django.core.context_processors.media",
-#    "django.core.context_processors.static",
+    "django.core.context_processors.static",
     "django.core.context_processors.request",
     'django.core.context_processors.csrf',
     "django.contrib.messages.context_processors.messages",
@@ -139,7 +141,7 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.sites',
     'django.contrib.messages',
-#    'django.contrib.staticfiles',
+    'django.contrib.staticfiles',
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
